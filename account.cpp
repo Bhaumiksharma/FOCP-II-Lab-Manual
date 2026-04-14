@@ -6,14 +6,15 @@ using namespace std;
 
 class Account 
 {
-    int accNum;
-    float balance;
+     string account_Number;
+protected:
+ float balance;
 
 public:
-    Account(int accno, float bal)
+   Account(string accno, float bal)
     {
-        this->accNum = accno;
-        this->balance = bal;
+        account_Number = accno;
+        balance = bal;
     }
 
     float getBalance()
@@ -24,37 +25,37 @@ public:
 
     void displayAccount()
     {
-        cout << "Your account number is " << accNum << endl;
+        cout << "Your account number is " << account_Number << endl;
         cout << "Balance is " << balance << endl;
     }
 };
 
 class SavingsAccount : public Account 
 {  
-    float rate_of_intrest;
+    float  intrest_rate;
 
 public:
-    SavingsAccount(int accNo, float bal, float rate)
+    SavingsAccount(string accNo, float bal, float rate)
         : Account(accNo, bal)
     {
-        rate_of_intrest = rate;
+         intrest_rate = rate;
     }
 
     void cal_intrest() 
     {
-        float interest = (getBalance() * rate_of_intrest) / 100;
+        float interest = (getBalance() * intrest_rate) / 100;
         cout << "Total Interest: " << interest << endl;
     }
 };
 
 int main()
 {
-    Account a1(101, 5000);
+    Account a1("101", 5000);
     a1.displayAccount();
 
     cout << endl;
 
-    SavingsAccount s1(102, 10000, 5);
+    SavingsAccount s1("101b", 10000, 5);
     s1.displayAccount();
     s1.cal_intrest();
 
