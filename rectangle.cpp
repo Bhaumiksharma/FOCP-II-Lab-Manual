@@ -4,9 +4,8 @@ class shape
 {
 public:
 shape(){cout<<"\n shape default const called";}
-void area()
-{cout<<"\n no dim no area";}
-void display(){cout<<" \n we are 2d shape";}
+ virtual void area()=0;// pure virtual function 
+ void display(){cout<<" \n we are 2d shape";}
 };
 class rectangle:public shape
 {
