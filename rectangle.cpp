@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-class shape
+class shape final 
 {
 public:
 shape(){cout<<"\n shape default const called";}
